@@ -56,12 +56,29 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Script\Item\MagnifyingGlass.cs" />
+    <Compile Include="Assets\Script\Item\MagicStone.cs" />
     <Compile Include="Assets\Script\Bullet\MagicBall.cs" />
     <Compile Include="Assets\Script\Bullet\Rosruc.cs" />
+    <Compile Include="Assets\Script\Item\ProtectBall.cs" />
+    <Compile Include="Assets\Script\Manager\ConsoleManager.cs" />
+    <Compile Include="Assets\Script\SerializableDictionary\SerializableDictionary.cs" />
+    <Compile Include="Assets\Script\Item\ExpStars\WhiteExpStar.cs" />
+    <Compile Include="Assets\Script\Item\AcceleratePortal.cs" />
+    <Compile Include="Assets\Script\Item\MagicHat.cs" />
+    <Compile Include="Assets\Script\Item\ExpStars\GreenExpStar.cs" />
+    <Compile Include="Assets\Script\SerializableDictionary\CustomDictionary.cs" />
+    <Compile Include="Assets\Script\Item\FrozenNameTag.cs" />
+    <Compile Include="Assets\Script\Item\Churu.cs" />
     <Compile Include="Assets\Script\Bullet\BulletSpawner.cs" />
     <Compile Include="Assets\Vertical 2D Shooting BE4\ReadMe\Scripts\ReadmeBE4.cs" />
+    <Compile Include="Assets\Script\Item\Ribbon.cs" />
+    <Compile Include="Assets\Script\Item\ExpStars\BlueExpStar.cs" />
     <Compile Include="Assets\Script\Bullet\Bullet.cs" />
+    <Compile Include="Assets\Script\Item\SpikyBall.cs" />
     <Compile Include="Assets\Script\Bullet\BulletData.cs" />
+    <Compile Include="Assets\Script\Item\Item.cs" />
+    <Compile Include="Assets\Script\Item\FragmentBlueStar.cs" />
     <Compile Include="Assets\Script\Player.cs" />
     <Compile Include="Assets\Script\Bullet\CatsEyeSpawner.cs" />
     <Compile Include="Assets\Script\Enemy.cs" />
@@ -69,9 +86,13 @@
     <Compile Include="Assets\Script\Bullet\MagicBallSpawner.cs" />
     <Compile Include="Assets\Script\Bullet\CatsEye.cs" />
     <Compile Include="Assets\Script\Manager\EnemyManager.cs" />
+    <Compile Include="Assets\Script\Item\ExpStars\RedExpStar.cs" />
+    <Compile Include="Assets\Script\PauseMenu.cs" />
     <Compile Include="Assets\Script\CameraResolution.cs" />
     <Compile Include="Assets\Script\Bullet\RosrucSpawner.cs" />
     <Compile Include="Assets\Script\Manager\GameManager.cs" />
+    <Compile Include="Assets\Script\Item\ProtectBallObject.cs" />
+    <Compile Include="Assets\Script\Item\ExpStars\YellowExpStar.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

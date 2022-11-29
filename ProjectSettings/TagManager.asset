@@ -8,6 +8,8 @@ TagManager:
   - Border
   - Remove
   - Enemy
+  - Items
+  - Magnet
   layers:
   - Default
   - TransparentFX
@@ -17,9 +19,9 @@ TagManager:
   - UI
   - Ignore
   - Bullet
-  - 
-  - 
-  - 
+  - Player
+  - Items
+  - HittedEnemy
   - 
   - 
   - 
@@ -44,4 +46,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Canvas
+    uniqueID: 467070919
     locked: 0

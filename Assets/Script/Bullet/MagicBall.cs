@@ -16,6 +16,11 @@ public class MagicBall : Bullet
     {
         rigid.velocity = speed * transform.up;
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log(0);
+        //collision.contacts[0].point
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Remove"))

@@ -9,6 +9,6 @@ public class BulletData : ScriptableObject
     public float[] delay;
     public float[] speed;
     public float[] dmg;
-    public int knockback;
+    public float knockback;
     public int limit;
 }

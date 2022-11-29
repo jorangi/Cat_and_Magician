@@ -23,5 +23,5 @@ MonoBehaviour:
   - 4.4
   - 4.7
   - 5
-  knockback: 2
+  knockback: 0.05
   limit: 300

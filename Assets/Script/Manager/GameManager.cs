@@ -6,6 +6,9 @@ public class GameManager : MonoBehaviour
 {
     private static GameManager inst = null;
     public EnemyManager enemyManager;
+    public ConsoleManager consoleManager;
+    public Player player;
+    public DropsDictionary Drops = new();
     public static GameManager Inst
     {
         get
@@ -30,5 +33,7 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         Application.targetFrameRate = 120;
         enemyManager = FindObjectOfType<EnemyManager>();
+        consoleManager = FindObjectOfType<ConsoleManager>();
+        player = FindObjectOfType<Player>();
     }
 }

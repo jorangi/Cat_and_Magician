@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Vertical 2D Shooting BE4\ReadMe\Scripts\Editor\ReadmeEditorBE4.cs" />
+    <Compile Include="Assets\Script\SerializableDictionary\Editor\SerializableDictionaryPropertyDrawer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

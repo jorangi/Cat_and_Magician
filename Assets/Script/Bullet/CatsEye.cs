@@ -15,6 +15,7 @@ public class CatsEye : Bullet
         }
         else if (collision.CompareTag("Enemy"))
         {
+            collision.transform.Translate(Vector2.up * knockback);
             collision.GetComponent<Enemy>().HP -= dmg;
             ReturnObject();
         }

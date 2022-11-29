@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour
 {
     public float speed;
     public float dmg;
-    public int knockback;
+    public float knockback;
     protected virtual void Awake()
     {
         GetComponent<BoxCollider2D>().isTrigger = true;
