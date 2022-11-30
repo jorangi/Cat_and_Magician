@@ -19,6 +19,7 @@ public class FrozenNameTag : Item
                 GameManager.Inst.player.BulletSpeed -= val[lv - 1];
             }
             lv = value;
+            GameManager.Inst.player.itemLevels["FrozenNameTag"] = value;
         }
     }
     public override void SetLv(int lv)

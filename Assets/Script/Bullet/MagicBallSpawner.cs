@@ -4,8 +4,16 @@ using UnityEngine;
 
 public class MagicBallSpawner : BulletSpawner
 {
-    public int bounce = 4;
+    public int bounce = 0;
 
+    protected override void LevelChanged()
+    {
+        bounce = Lv;
+    }
+    protected override void Evolved()
+    {
+
+    }
     protected override void ShootBullet()
     {
         GameObject obj = Bullets.transform.Find(bulletData.name).GetChild(0).gameObject;

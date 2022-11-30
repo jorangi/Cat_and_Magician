@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f85d27df6458684ab5201570b2a0e3b, type: 3}
+  m_Name: MagicArrow
+  m_EditorClassIdentifier: 
+  id: MagicArrow
+  icon: {fileID: 0}
+  title: "\uB9E4\uC9C1\uC560\uB85C\uC6B0"
+  itemUp:
+  - "\uC804\uBC29\uC5D0 \uD654\uC0B4\uC744 \uBC1C\uC0AC\uD569\uB2C8\uB2E4, \uB9E4\uC9C1\uC560\uB85C\uC6B0\uC758
+    \uB808\uBCA8\uC5D0 \uB530\uB77C \uD654\uC0B4\uC758 \uAC1C\uC218\uAC00 \uB298\uC5B4\uB0A9\uB2C8\uB2E4"
+  - "\uD53C\uD574\uB7C9\uC774 \uC99D\uAC00\uD569\uB2C8\uB2E4"
+  - "\uD53C\uD574\uB7C9\uC774 \uC99D\uAC00\uD558\uACE0 3\uAC08\uB798\uC758 \uD654\uC0B4\uC744
+    \uBC1C\uC0AC\uD569\uB2C8\uB2E4"
+  - "\uD53C\uD574\uB7C9\uC774 \uC99D\uAC00\uD569\uB2C8\uB2E4"
+  - "\uD53C\uD574\uB7C9\uC774 \uC99D\uAC00\uD558\uACE0 5\uAC08\uB798\uC758 \uD654\uC0B4\uC744
+    \uBC1C\uC0AC\uD569\uB2C8\uB2E4"
+  Upgraded: "\uD654\uC0B4\uC774 8\uAC08\uB798\uB85C \uBC1C\uC0AC\uB429\uB2C8\uB2E4"

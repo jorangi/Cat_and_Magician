@@ -20,6 +20,7 @@ public class FragmentBlueStar : Item
                 magnet.radius -= val[lv - 1];
             }
             lv = value;
+            GameManager.Inst.player.itemLevels["FragmentBlueStar"] = value;
         }
     }
     public override void SetLv(int lv)

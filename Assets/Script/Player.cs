@@ -10,13 +10,24 @@ public class Player : MonoBehaviour
 {
     //컴포넌트 관련
     public PauseMenu pauseMenu;
+    public LevelupMenu levelupMenu;
     public PlayerInputs input;
     private Transform healthBar;
     private TextMeshProUGUI levelText;
     private Image expBar;
-    public BulletSpawnerDictionary spawners;
-    public BulletDataDictionary bulletDatas;
+    public Image stageBar;
+    public TextMeshProUGUI stardustUI;
+    public Transform itemList;
+    public GameObject itemSlot;
+    public StrBspawnerDictionary spawners = new();
+    public StrBdataDictionary bulletDatas = new();
+    public StrIntDictionary itemLevels = new();
+    public TextMeshProUGUI Timer;
 
+    //아이템 데이터
+    public ItemData[] itemDatas;
+    public ItemData StardustData;
+    public int levelupCount;
 
     //플레이어 투사체 넉백 관련
     private float knockback;
@@ -93,6 +104,7 @@ public class Player : MonoBehaviour
         get => hp;
         set
         {
+            value = Mathf.Clamp(value, 0.0f, maxhp);
             hp = value;
             healthBar.localScale = new (10 * (hp/maxhp), 1);
         }
@@ -113,7 +125,7 @@ public class Player : MonoBehaviour
             maxExp += ExpIncrease[value/20];
         }
     }
-    private int maxExp;
+    public int maxExp;
     private int exp;
     public int Exp
     {
@@ -122,21 +134,36 @@ public class Player : MonoBehaviour
         {
             while (value >= maxExp)
             {
-                value -= maxExp;  
+                value -= maxExp;
                 Lv++;
+                levelupCount++;
             }
             expBar.fillAmount = (float)value / maxExp;
             exp = value;
         }
     }
+    private int stardust;
+    public int StarDust
+    {
+        get => stardust;
+        set
+        {
+            stardust = value;
+            stardustUI.text = value.ToString();
+        }
+    }
 
     private void Awake()
     {
-        Canvas canvas = FindObjectOfType<Canvas>();
+        Canvas canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
         healthBar = transform.Find("HealthBar");
         expBar = canvas.transform.Find("exp").GetComponent<Image>();
         levelText = canvas.transform.Find("level").GetComponent<TextMeshProUGUI>();
+        itemList = canvas.transform.Find("ItemList").transform.Find("list");
+        stageBar = canvas.transform.Find("stageBar").GetComponent<Image>();
+        Timer = stageBar.GetComponentInChildren<TextMeshProUGUI>();
         input = new PlayerInputs();
+        AddItem("CatsEye");
     }
     private void Start()
     {
@@ -161,10 +188,14 @@ public class Player : MonoBehaviour
     private void Update()
     {
         HP += recover*Time.deltaTime;
+        if(levelupCount>0)
+        {
+            levelupMenu.gameObject.SetActive(true);
+        }
     }
     private void OnApplicationFocus(bool focus)
     {
-        if(!focus)
+        if(!focus && !levelupMenu.gameObject.activeSelf)
         {
             pauseMenu.gameObject.SetActive(true);
         }
@@ -172,19 +203,53 @@ public class Player : MonoBehaviour
     public void Drag(InputAction.CallbackContext obj)
     {
         transform.Translate(obj.ReadValue<Vector2>().x / 150.0f, 0, 0);
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -2, 2), transform.position.y, transform.position.z);
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -2.55f, 2.55f), transform.position.y, transform.position.z);
     }
     public void AddItem(string type)
     {
-        if(GetComponentInChildren(Type.GetType($"{type}Spawner"))!=null)
+        string[] weapon = { "CatsEye", "Rosruc", "MagicBall", "MagicArrow", "Airstrike"};
+        if (Array.IndexOf(weapon, type)>-1)
         {
-            var item = GetComponent(Type.GetType($"{type}Spawner")) as BulletSpawner;
+            var item = GetComponentInChildren(Type.GetType($"{type}Spawner")) as BulletSpawner;
             item.enabled = true;
             item.Lv++;
         }
-        else if(transform.Find("Items").GetComponent(Type.GetType(type)) as Item)
+        else
         {
             var item = transform.Find("Items").GetComponent(Type.GetType(type)) as Item;
+
+            if(item.itemSlot==null)
+            {
+                item.itemSlot = Instantiate(GameManager.Inst.player.itemSlot, GameManager.Inst.player.itemList); 
+                foreach (ItemData i in itemDatas)
+                {
+                    if (i.id == type)
+                    {
+                        item.itemSlot.GetComponent<Image>().sprite = i.icon;
+                    }
+                }
+            }
+            
+            item.itemSlot.name = type;
+            switch (itemLevels[type])
+            {
+                case 1:
+                    item.itemSlot.GetComponentInChildren<TextMeshProUGUI>().text = "Ⅰ";
+                    break;
+                case 2:
+                    item.itemSlot.GetComponentInChildren<TextMeshProUGUI>().text = "Ⅱ";
+                    break;
+                case 3:
+                    item.itemSlot.GetComponentInChildren<TextMeshProUGUI>().text = "Ⅲ";
+                    break;
+                case 4:
+                    item.itemSlot.GetComponentInChildren<TextMeshProUGUI>().text = "Ⅳ";
+                    break;
+                case 5:
+                    item.itemSlot.GetComponentInChildren<TextMeshProUGUI>().text = "Ⅴ";
+                    break;
+            }
+
             item.enabled = true;
             item.AddLv();
         }

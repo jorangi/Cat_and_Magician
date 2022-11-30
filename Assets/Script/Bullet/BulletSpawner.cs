@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class BulletSpawner : MonoBehaviour
 {
+    public GameObject itemslot;
     public GameObject Bullets;
     public BulletData bulletData;
     public float dmg;
@@ -21,6 +23,26 @@ public class BulletSpawner : MonoBehaviour
             dmg = bulletData.dmg[Mathf.Min(value - 1, bulletData.dmg.Length-1)];
             delay = bulletData.delay[Mathf.Min(value - 1, bulletData.delay.Length - 1)];
             speed = bulletData.speed[Mathf.Min(value - 1, bulletData.speed.Length - 1)];
+            LevelChanged();
+            GameManager.Inst.player.itemLevels[bulletData.name] = value;
+            switch (value)
+            {
+                case 1:
+                    itemslot.GetComponentInChildren<TextMeshProUGUI>().text = "弘";
+                    break;
+                case 2:
+                    itemslot.GetComponentInChildren<TextMeshProUGUI>().text = "弗";
+                    break;
+                case 3:
+                    itemslot.GetComponentInChildren<TextMeshProUGUI>().text = "必";
+                    break;
+                case 4:
+                    itemslot.GetComponentInChildren<TextMeshProUGUI>().text = "戊";
+                    break;
+                case 5:
+                    itemslot.GetComponentInChildren<TextMeshProUGUI>().text = "打";
+                    break;
+            }
         }
     }
     private bool evo;
@@ -30,6 +52,7 @@ public class BulletSpawner : MonoBehaviour
         set
         {
             evo = value;
+            Evolved();
         }
     }
     public float timer;
@@ -47,12 +70,52 @@ public class BulletSpawner : MonoBehaviour
     }
     private void OnEnable()
     {
+
+        if (itemslot == null)
+        {
+            itemslot = Instantiate(GameManager.Inst.player.itemSlot, GameManager.Inst.player.itemList);
+            itemslot.name = bulletData.name;
+            foreach(ItemData i in GameManager.Inst.player.itemDatas)
+            {
+                if(i.id==bulletData.name)
+                {
+                    itemslot.GetComponent<UnityEngine.UI.Image>().sprite = i.icon;
+                }
+            }
+            switch (lv)
+            {
+                case 1:
+                    itemslot.GetComponentInChildren<TextMeshProUGUI>().text = "弘";
+                    break;
+                case 2:
+                    itemslot.GetComponentInChildren<TextMeshProUGUI>().text = "弗";
+                    break;
+                case 3:
+                    itemslot.GetComponentInChildren<TextMeshProUGUI>().text = "必";
+                    break;
+                case 4:
+                    itemslot.GetComponentInChildren<TextMeshProUGUI>().text = "戊";
+                    break;
+                case 5:
+                    itemslot.GetComponentInChildren<TextMeshProUGUI>().text = "打";
+                    break;
+            }
+        }
+        itemslot.SetActive(true);
         if (Lv > 0)
         {
             dmg = bulletData.dmg[Lv - 1];
             delay = 1 / (bulletData.delay[Lv - 1] + GameManager.Inst.player.Delay);
             speed = bulletData.speed[Lv - 1] + GameManager.Inst.player.BulletSpeed;
         }
+    }
+    protected virtual void LevelChanged()
+    {
+
+    }
+    protected virtual void Evolved()
+    {
+
     }
     private void PoolingBullet()
     {

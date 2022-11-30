@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f85d27df6458684ab5201570b2a0e3b, type: 3}
+  m_Name: MagicBall
+  m_EditorClassIdentifier: 
+  id: MagicBall
+  icon: {fileID: 0}
+  title: "\uB9E4\uC9C1\uBCFC"
+  itemUp:
+  - "\uC801 \uD639\uC740 \uBCBD\uC5D0 \uB2FF\uC744 \uB54C\uB9C8\uB2E4 \uD295\uAE30\uB294
+    \uACF5\uC744 \uBC1C\uC0AC\uD569\uB2C8\uB2E4, \uD295\uAE30\uB294 \uD69F\uC218\uB294
+    \uB9E4\uC9C1\uBCFC \uB808\uBCA8\uC758 \uC601\uD5A5\uC744 \uBC1B\uC2B5\uB2C8\uB2E4"
+  - "\uD53C\uD574\uB7C9\uC774 \uC99D\uAC00\uD558\uACE0 2\uD68C \uD295\uAE41\uB2C8\uB2E4"
+  - "\uD53C\uD574\uB7C9\uC774 \uC99D\uAC00\uD558\uACE0 3\uD68C \uD295\uAE41\uB2C8\uB2E4"
+  - "\uD53C\uD574\uB7C9\uC774 \uC99D\uAC00\uD558\uACE0 4\uD68C \uD295\uAE41\uB2C8\uB2E4"
+  - "\uD53C\uD574\uB7C9\uC774 \uC99D\uAC00\uD558\uACE0 5\uD68C \uD295\uAE41\uB2C8\uB2E4"
+  Upgraded: "\uC77C\uC815\uC2DC\uAC04\uB9C8\uB2E4 \uD504\uB9AC\uC2A4\uBE44\uB97C
+    \uB358\uC838 \uC801\uC744 \uACF5\uACA9\uD569\uB2C8\uB2E4"

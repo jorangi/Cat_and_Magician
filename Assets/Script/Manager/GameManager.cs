@@ -7,8 +7,9 @@ public class GameManager : MonoBehaviour
     private static GameManager inst = null;
     public EnemyManager enemyManager;
     public ConsoleManager consoleManager;
+    public StageManager stageManager;
     public Player player;
-    public DropsDictionary Drops = new();
+    public StrGameObjDictionary Drops = new();
     public static GameManager Inst
     {
         get
@@ -34,6 +35,7 @@ public class GameManager : MonoBehaviour
         Application.targetFrameRate = 120;
         enemyManager = FindObjectOfType<EnemyManager>();
         consoleManager = FindObjectOfType<ConsoleManager>();
+        stageManager = FindObjectOfType<StageManager>();
         player = FindObjectOfType<Player>();
     }
 }

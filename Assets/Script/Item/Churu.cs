@@ -19,6 +19,7 @@ public class Churu : Item
                 GameManager.Inst.player.recover -= val[lv - 1];
             }
             lv = value;
+            GameManager.Inst.player.itemLevels["Churu"] = value;
         }
     }
     public override void SetLv(int lv)

@@ -1,16 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[System.Serializable]
-public class ConsoleDictionary : SerializableDictionary <string, string>{ }
 
 [System.Serializable]
-public class DropsDictionary : SerializableDictionary <string, GameObject>{ }
+public class IntWaveDictionary : SerializableDictionary <int, Wave>{ }
+[System.Serializable]
+public class StrIntDictionary : SerializableDictionary <string, int>{ }
+[System.Serializable]
+public class StrStrDictionary : SerializableDictionary <string, string>{ }
 
 [System.Serializable]
-public class EnemyDictionary : SerializableDictionary<string, GameObject> { }
+public class StrGameObjDictionary : SerializableDictionary<string, GameObject> { }
 
 [System.Serializable]
-public class BulletSpawnerDictionary : SerializableDictionary <string, BulletSpawner>{ }
+public class StrBspawnerDictionary : SerializableDictionary <string, BulletSpawner>{ }
 [System.Serializable]
-public class BulletDataDictionary : SerializableDictionary <string, BulletData>{ }
+public class StrBdataDictionary : SerializableDictionary <string, BulletData>{ }

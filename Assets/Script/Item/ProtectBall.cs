@@ -17,6 +17,7 @@ public class ProtectBall : Item
             value = Mathf.Clamp(value, 1, val.Length);
             lv = value;
             timer = Mathf.Min(timer, val[value - 1]);
+            GameManager.Inst.player.itemLevels["ProtectBall"] = value;
         }
     }
     public override void SetLv(int lv)

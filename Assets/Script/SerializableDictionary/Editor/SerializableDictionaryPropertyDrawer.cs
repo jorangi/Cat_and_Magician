@@ -5,11 +5,13 @@ using UnityEditor;
 using System.Reflection;
 using System;
 
-[CustomPropertyDrawer(typeof(EnemyDictionary))]
-[CustomPropertyDrawer(typeof(ConsoleDictionary))]
-[CustomPropertyDrawer(typeof(BulletSpawnerDictionary))]
-[CustomPropertyDrawer(typeof(BulletDataDictionary))]
-[CustomPropertyDrawer(typeof(DropsDictionary))]
+[CustomPropertyDrawer(typeof(IntWaveDictionary))]
+[CustomPropertyDrawer(typeof(StrIntDictionary))]
+[CustomPropertyDrawer(typeof(StrGameObjDictionary))]
+[CustomPropertyDrawer(typeof(StrStrDictionary))]
+[CustomPropertyDrawer(typeof(StrBspawnerDictionary))]
+[CustomPropertyDrawer(typeof(StrBdataDictionary))]
+[CustomPropertyDrawer(typeof(StrGameObjDictionary))]
 public class SerializableDictionaryPropertyDrawer : PropertyDrawer
 {
 	const string KeysFieldName = "m_keys";

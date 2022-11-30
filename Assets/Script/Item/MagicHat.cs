@@ -19,6 +19,7 @@ public class MagicHat : Item
                 GameManager.Inst.player.BulletDmg -= val[lv - 1];
             }
             lv = value;
+            GameManager.Inst.player.itemLevels["MagicHat"] = value;
         }
     }
     public override void SetLv(int lv)

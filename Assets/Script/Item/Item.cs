@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
+    public GameObject itemSlot;
     protected bool itemEnabled = false;
     private bool Magnet = false;
     private float spd = 2.0f;

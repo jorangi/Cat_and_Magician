@@ -12,14 +12,14 @@ public class MagicBall : Bullet
         rigid = GetComponent<Rigidbody2D>();
         GetComponent<BoxCollider2D>().isTrigger = true;
     }
+    private void OnDisable()
+    {
+        transform.rotation = Quaternion.Euler(0, 0, 0);
+        rigid.velocity = Vector3.zero;
+    }
     protected override void Update()
     {
         rigid.velocity = speed * transform.up;
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Debug.Log(0);
-        //collision.contacts[0].point
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -36,6 +36,10 @@ public class MagicBall : Bullet
                 {
                     transform.rotation = Quaternion.Euler(0, 0, Random.Range(0f, 361f));
                     bounce--;
+                }
+                else
+                {
+                    ReturnObject();
                 }
                 colObj = collision.gameObject;
             }
@@ -73,8 +77,11 @@ public class MagicBall : Bullet
                     transform.rotation = Quaternion.Euler(0, 0, Random.Range(0f, 361f));
                     bounce--;
                 }
+                else
+                {
+                    ReturnObject();
+                }
                 colObj = collision.gameObject;
-                //ReturnObject();
             }
             else if (collision.CompareTag("Border") && colObj != collision.gameObject)
             {

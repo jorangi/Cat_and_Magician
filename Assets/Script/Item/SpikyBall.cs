@@ -19,6 +19,7 @@ public class SpikyBall : Item
                 GameManager.Inst.player.SpikeDmg -= val[lv - 1];
             }
             lv = value;
+            GameManager.Inst.player.itemLevels["SpikyBall"] = value;
         }
     }
     public override void SetLv(int lv)

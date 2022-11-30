@@ -19,6 +19,7 @@ public class AcceleratePortal : Item
                 GameManager.Inst.player.BulletSpeed -= val[lv - 1];
             }
             lv = value;
+            GameManager.Inst.player.itemLevels["AcceleratePortal"] = value;
         }
     }
     public override void SetLv(int lv)

@@ -53,6 +53,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cd5e9dd05cd353419ce17e76dd1744e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemSlot: {fileID: 0}
 --- !u!114 &4977921078037430125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65,6 +66,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6a59c6421c94504a8f6669e310b30ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemSlot: {fileID: 0}
 --- !u!114 &1724920645856935879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77,6 +79,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe825e46bffb9b3488ed49e245af6d0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemSlot: {fileID: 0}
   magnet: {fileID: 4406749878379563667}
 --- !u!114 &6266138476466578650
 MonoBehaviour:
@@ -90,6 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d90d47932b9ad764ea0d368e1b9222da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemSlot: {fileID: 0}
 --- !u!114 &2730823128899531350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102,6 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac40079bc30f9fe46aabb1539013d7a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemSlot: {fileID: 0}
 --- !u!114 &3939163256913448551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,6 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 342b2ed4028068d4a801df79c52fb980, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemSlot: {fileID: 0}
 --- !u!114 &1972319192231738468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,6 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5e66c7e285ba314fa323c66c9938c44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemSlot: {fileID: 0}
 --- !u!114 &7431307402413887424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,6 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc17be0c951ec6b4ca046b4be77dd35c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemSlot: {fileID: 0}
   protectBall: {fileID: 4959846684946487288}
 --- !u!114 &8663738690122185447
 MonoBehaviour:
@@ -151,6 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca278863088b4e744808b480f0ac5713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemSlot: {fileID: 0}
 --- !u!114 &723534994811309291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,6 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48a424a8b1b885d45886d0495b4cd6d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemSlot: {fileID: 0}
 --- !u!1 &4483523416625298611
 GameObject:
   m_ObjectHideFlags: 0
@@ -209,6 +219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e0fdce1b28b7f643aca7e90ddf5576b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemslot: {fileID: 0}
   Bullets: {fileID: 0}
   bulletData: {fileID: 11400000, guid: c792fb5464502d04aa3de63803914a9b, type: 2}
   dmg: 0
@@ -227,6 +238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6069240b7c50084d9748ceab28fd32b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemslot: {fileID: 0}
   Bullets: {fileID: 0}
   bulletData: {fileID: 11400000, guid: 3f6eceb4bff3aba43a3d509d4431955c, type: 2}
   dmg: 0
@@ -245,6 +257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93f1ebadaffbf764d81c018442c30486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemslot: {fileID: 0}
   Bullets: {fileID: 0}
   bulletData: {fileID: 11400000, guid: 5ae203e846a10db49964bbe035d783c0, type: 2}
   dmg: 0
@@ -271,7 +284,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6919618833043197725
 Transform:
   m_ObjectHideFlags: 0
@@ -528,6 +541,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 0}
+  levelupMenu: {fileID: 0}
+  stageBar: {fileID: 0}
+  stardustUI: {fileID: 0}
+  itemList: {fileID: 0}
+  itemSlot: {fileID: 6271490121993078668, guid: 98de16934c482014e9c8b419121b744b, type: 3}
   spawners:
     m_keys: []
     m_values: []
@@ -544,8 +562,46 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 5ae203e846a10db49964bbe035d783c0, type: 2}
     - {fileID: 11400000, guid: b7ef8a659050e994995887fa8fc5b55e, type: 2}
     - {fileID: 11400000, guid: 91bee2b8ecbf3154f814661b590a13df, type: 2}
+  itemLevels:
+    m_keys:
+    - CatsEye
+    - Rosruc
+    - MagicBall
+    - MagicArrow
+    - Airstrike
+    - Ribbon
+    - MagicHat
+    - MagnifyingGlass
+    - MagicStone
+    - FrozenNameTag
+    - AcceleratePortal
+    - ProtectBall
+    - SpikyBall
+    - Churu
+    - FragmentBlueStar
+    m_values: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Timer: {fileID: 0}
+  itemDatas:
+  - {fileID: 11400000, guid: eb3e91bf5e791a442b494f2bca5c3ffa, type: 2}
+  - {fileID: 11400000, guid: e3ac7042a783f6c46b3a4efed1dc5a59, type: 2}
+  - {fileID: 11400000, guid: 74b57e770e5781f4a905c8234d9da85f, type: 2}
+  - {fileID: 11400000, guid: b86b8d9269779b54ea9cd64647559179, type: 2}
+  - {fileID: 11400000, guid: 9ab59f1f145d79c46a0a008eb7822404, type: 2}
+  - {fileID: 11400000, guid: bed99c2ded44ffe49930236bd9c1b062, type: 2}
+  - {fileID: 11400000, guid: ee9d42d35259ef04fa08375afa614c01, type: 2}
+  - {fileID: 11400000, guid: a6948f7ce02943b439b063d1c82b23aa, type: 2}
+  - {fileID: 11400000, guid: 0fed0dac0362d3149b76125d6fc94748, type: 2}
+  - {fileID: 11400000, guid: ad49e039996811e4f87f3e80f55ff5c3, type: 2}
+  - {fileID: 11400000, guid: e6de051889bb62245b78bf4fea918b7d, type: 2}
+  - {fileID: 11400000, guid: 891bfac063110364baa81af47906aaad, type: 2}
+  - {fileID: 11400000, guid: 48315aa66b2fce340b57e26a3f4c4e64, type: 2}
+  - {fileID: 11400000, guid: 66956f8d45f3ea64dafb99f6aea158a1, type: 2}
+  - {fileID: 11400000, guid: bce6f8a7be017a443a3b477d0ee8f9b5, type: 2}
+  StardustData: {fileID: 11400000, guid: 9e0745f5399b6a44386e8a4632b6b910, type: 2}
+  levelupCount: 0
   maxhp: 0
   recover: 0
+  maxExp: 0
 --- !u!1 &6669726098401759645
 GameObject:
   m_ObjectHideFlags: 0
@@ -593,7 +649,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.6
 --- !u!1 &7852696483626377686
 GameObject:
   m_ObjectHideFlags: 0

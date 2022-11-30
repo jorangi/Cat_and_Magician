@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyManager: {fileID: 0}
   consoleManager: {fileID: 0}
+  stageManager: {fileID: 0}
   player: {fileID: 0}
   Drops:
     m_keys:

@@ -19,6 +19,7 @@ public class MagnifyingGlass : Item
                 GameManager.Inst.player.BulletSize -= val[lv - 1];
             }
             lv = value;
+            GameManager.Inst.player.itemLevels["MagnifyingGlass"] = value;
         }
     }
     public override void SetLv(int lv)

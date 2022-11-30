@@ -14,8 +14,8 @@ public class ConsoleManager : MonoBehaviour
     public GameObject PreviewButton;
     public TMP_InputField input;
     public TextMeshProUGUI Log;
-    public ConsoleDictionary Consoles = new();
-    public ConsoleDictionary ConsolesOrigin = new();
+    public StrStrDictionary Consoles = new();
+    public StrStrDictionary ConsolesOrigin = new();
     public bool Autoclose = false;
 
     public void SwitchAutoclose()
@@ -27,7 +27,6 @@ public class ConsoleManager : MonoBehaviour
         ConsoleInitialize();
         Preview = ConsoleUI.transform.Find("Preview").gameObject;
         Preview.SetActive(false);
-        VisibleConsole();
     }
     private void Update()
     {
@@ -68,9 +67,9 @@ public class ConsoleManager : MonoBehaviour
     }
     private void ConsoleInitialize()
     {
-        string[] itemNamekor = { "캣츠아이", "로스러크", "매직볼", "매직애로우", "에어스트라이크", "리본", "매직햇", "돋보기", "마법석", "얼어붙은이름표", "가속포탈", "프로텍트볼", "밤송이", "푸른별조각" };
-        string[] itemName = { "catseye", "rosruc", "magicball", "magicarrow", "airstrike", "ribbon", "magichat", "magnifyingglass", "magicstone", "frozennametag", "accelerateportal", "protectball", "spikyball", "fragmentbluestar" };
-        string[] itemNameOrigin = { "CatsEye", "Rosruc", "MagicBall", "MagicArrow", "AirStrike", "Ribbon", "MagicHat", "MagnifyingGlass", "MagicStone", "FfrozenNameTag", "AcceleratePortal", "ProtectBall", "SpikyBall", "FragmentBlueStar" };
+        string[] itemNamekor = { "캣츠아이", "로스러크", "매직볼", "매직애로우", "에어스트라이크", "리본", "매직햇", "돋보기", "마법석", "얼어붙은이름표", "가속포탈", "프로텍트볼", "액상사료", "밤송이", "푸른별조각" };
+        string[] itemName = { "catseye", "rosruc", "magicball", "magicarrow", "airstrike", "ribbon", "magichat", "magnifyingglass", "magicstone", "frozennametag", "accelerateportal", "protectball", "churu", "spikyball", "fragmentbluestar" };
+        string[] itemNameOrigin = { "CatsEye", "Rosruc", "MagicBall", "MagicArrow", "AirStrike", "Ribbon", "MagicHat", "MagnifyingGlass", "MagicStone", "FfrozenNameTag", "AcceleratePortal", "ProtectBall", "Churu", "SpikyBall", "FragmentBlueStar" };
         string[] mobNamekor = { "노란별", "푸른별", "초록별", "붉은별", "하얀별" };
         string[] mobName = { "yellowexpstar", "blueexpstar", "greenexpstar", "redexpstar", "whiteexpstar" };
         string[] mobNameOrigin = { "YellowExpStar", "BlueExpStar", "GreenExpStar", "RedExpStar", "WhiteExpStar" };
@@ -244,7 +243,7 @@ public class ConsoleManager : MonoBehaviour
             return;
         }
         string[] weaponName = { "CatsEye", "Rosruc", "MagicBall", "MagicArrow", "AirStrike"};
-        string[] itemNameOrigin = { "CatsEye", "Rosruc", "MagicBall", "MagicArrow", "AirStrike", "Ribbon", "MagicHat", "MagnifyingGlass", "MagicStone", "FfrozenNameTag", "AcceleratePortal", "ProtectBall", "SpikyBall", "FragmentBlueStar" };
+        string[] itemNameOrigin = { "CatsEye", "Rosruc", "MagicBall", "MagicArrow", "AirStrike", "Ribbon", "MagicHat", "MagnifyingGlass", "MagicStone", "FfrozenNameTag", "AcceleratePortal", "ProtectBall", "Churu", "SpikyBall", "FragmentBlueStar" };
         string[] mobName = { "yellowexpstar", "blueexpstar", "greenexpstar", "redexpstar", "whiteexpstar" };
         string[] monsterName = { "testenemy" };
 
@@ -348,62 +347,62 @@ public class ConsoleManager : MonoBehaviour
                             case "setknockback":
                                 GameManager.Inst.player.Knockback = setvalue;
                                 if(Autoclose)HideConsole();
-                                break;
+                                return;
                             case "addexp":
                                 GameManager.Inst.player.Exp += setvalue;
                                 if(Autoclose)HideConsole();
-                                break;
+                                return;
                             case "subexp":
                                 GameManager.Inst.player.Exp -= setvalue;
                                 if(Autoclose)HideConsole();
-                                break;
+                                return;
                             case "addlv":
                                 for (int i = 0; i < setvalue; i++)
                                 {
-                                    GameManager.Inst.player.Lv++;
+                                    GameManager.Inst.player.Exp += GameManager.Inst.player.maxExp;
                                 }
                                 if(Autoclose)HideConsole();
-                                break;
+                                return;
                             case "sublv":
                                 GameManager.Inst.player.Lv -= setvalue;
                                 if(Autoclose)HideConsole();
-                                break;
+                                return;
                             case "setbulletspeed":
                                 GameManager.Inst.player.BulletSpeed -= setvalue;
                                 if(Autoclose)HideConsole();
-                                break;
+                                return;
                             case "setbulletdmg":
                                 GameManager.Inst.player.BulletDmg -= setvalue;
                                 if(Autoclose)HideConsole();
-                                break;
+                                return;
                             case "setbulletsize":
                                 GameManager.Inst.player.BulletSize = setvalue;
                                 if(Autoclose)HideConsole();
-                                break;
+                                return;
                             case "setdelay":
                                 GameManager.Inst.player.Delay -= setvalue;
                                 if(Autoclose)HideConsole();
-                                break;
+                                return;
                             case "sethp":
                                 GameManager.Inst.player.HP = setvalue;
                                 if(Autoclose)HideConsole();
-                                break;
+                                return;
                             case "setmaxhp":
                                 GameManager.Inst.player.maxhp = setvalue;
                                 if(Autoclose)HideConsole();
-                                break;
+                                return;
                             case "setrecover":
                                 GameManager.Inst.player.recover = setvalue;
                                 if(Autoclose)HideConsole();
-                                break;
+                                return;
                             case "setspikedmg":
                                 GameManager.Inst.player.SpikeDmg = setvalue;
                                 if(Autoclose)HideConsole();
-                                break;
+                                return;
                             case "setmagnet":
                                 GameManager.Inst.player.GetComponentInChildren<FragmentBlueStar>().magnet.radius = setvalue;
                                 if(Autoclose)HideConsole();
-                                break;
+                                return;
 
                         }
                     }
@@ -747,7 +746,7 @@ public class ConsoleManager : MonoBehaviour
                 }
                 if (text.IndexOf("resetmagnet") > -1)
                 {
-                    GameManager.Inst.player.GetComponentInChildren<FragmentBlueStar>().magnet.radius = 1;
+                    GameManager.Inst.player.GetComponentInChildren<FragmentBlueStar>().magnet.radius = 0.6f;
                     GameManager.Inst.player.GetComponentInChildren<FragmentBlueStar>().Lv = GameManager.Inst.player.GetComponentInChildren<FragmentBlueStar>().Lv;
                 }
             }

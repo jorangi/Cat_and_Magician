@@ -81,7 +81,7 @@
     <Compile Include="Assets\Script\Item\FragmentBlueStar.cs" />
     <Compile Include="Assets\Script\Player.cs" />
     <Compile Include="Assets\Script\Bullet\CatsEyeSpawner.cs" />
-    <Compile Include="Assets\Script\Enemy.cs" />
+    <Compile Include="Assets\Script\Enemy\Enemy.cs" />
     <Compile Include="Assets\Input\PlayerInputs.cs" />
     <Compile Include="Assets\Script\Bullet\MagicBallSpawner.cs" />
     <Compile Include="Assets\Script\Bullet\CatsEye.cs" />
@@ -93,6 +93,13 @@
     <Compile Include="Assets\Script\Manager\GameManager.cs" />
     <Compile Include="Assets\Script\Item\ProtectBallObject.cs" />
     <Compile Include="Assets\Script\Item\ExpStars\YellowExpStar.cs" />
+    <Compile Include="Assets\Script\Item\LevelupItem.cs" />
+    <Compile Include="Assets\Script\Item\ItemData.cs" />
+    <Compile Include="Assets\Script\LevelupMenu.cs" />
+    <Compile Include="Assets\Script\Enemy\EnemyData.cs" />
+    <Compile Include="Assets\Script\Stage\StageManager.cs" />
+    <Compile Include="Assets\Script\Stage\Stage.cs" />
+    <Compile Include="Assets\Script\Stage\Wave.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

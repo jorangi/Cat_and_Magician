@@ -21,6 +21,7 @@ public class Ribbon : Item
                 GameManager.Inst.player.HP -= val[lv - 1];
             }
             lv = value;
+            GameManager.Inst.player.itemLevels["Ribbon"] = value;
         }
     }
     public override void SetLv(int lv)
