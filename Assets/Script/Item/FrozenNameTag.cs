@@ -16,7 +16,7 @@ public class FrozenNameTag : Item
             GameManager.Inst.player.BulletSpeed -= val[value-1];
             if (lv > 0)
             {
-                GameManager.Inst.player.BulletSpeed -= val[lv - 1];
+                GameManager.Inst.player.BulletSpeed += val[lv - 1];
             }
             lv = value;
             GameManager.Inst.player.itemLevels["FrozenNameTag"] = value;

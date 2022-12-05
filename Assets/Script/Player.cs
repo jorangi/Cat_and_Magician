@@ -9,6 +9,8 @@ using TMPro;
 public class Player : MonoBehaviour
 {
     //컴포넌트 관련
+    [SerializeField]
+    private SpriteRenderer magicCirlce;
     public PauseMenu pauseMenu;
     public LevelupMenu levelupMenu;
     public PlayerInputs input;
@@ -26,6 +28,7 @@ public class Player : MonoBehaviour
 
     //아이템 데이터
     public ItemData[] itemDatas;
+    public List<ItemData> getItems;
     public ItemData StardustData;
     public int levelupCount;
 
@@ -96,14 +99,51 @@ public class Player : MonoBehaviour
     }
 
     //플레이어 체력관련
+    private bool invincible;
+    public bool Invincible
+    {
+        get => invincible;
+        set
+        {
+            invincible = value;
+            if(invincible)
+            {
+                StartCoroutine(Hit());
+            }
+        }
+    }
+    public float invincibleTime;
     private float hp;
     public float maxhp;
     public float recover;
+    private bool protect;
+    public bool Protect
+    {
+        get => protect;
+        set
+        {
+            if(protect)
+            {
+                transform.Find("ProtectBall").gameObject.SetActive(false);
+                Invincible = true;
+            }
+            protect = value;
+        }
+    }
     public float HP
     {
         get => hp;
         set
         {
+            if(value < hp)
+            {
+                Invincible = true;
+                if(Protect)
+                {
+                    Protect = false;
+                    return;
+                }
+            }
             value = Mathf.Clamp(value, 0.0f, maxhp);
             hp = value;
             healthBar.localScale = new (10 * (hp/maxhp), 1);
@@ -111,7 +151,7 @@ public class Player : MonoBehaviour
     }
 
     //플레이어 경험치 관련
-    private int[] ExpIncrease = { 2, 4, 7, 12, 18};
+    private int[] ExpIncrease = { 0, 1, 2, 5, 9};
     private int lv;
     public int Lv
     {
@@ -122,7 +162,7 @@ public class Player : MonoBehaviour
             levelText.text = $"LV. {value}";
             if (value == 1)
                 return;
-            maxExp += ExpIncrease[value/20];
+            maxExp += ExpIncrease[Mathf.Min(value/20, 4)];
         }
     }
     public int maxExp;
@@ -163,7 +203,10 @@ public class Player : MonoBehaviour
         stageBar = canvas.transform.Find("stageBar").GetComponent<Image>();
         Timer = stageBar.GetComponentInChildren<TextMeshProUGUI>();
         input = new PlayerInputs();
+        getItems.Capacity = 12;
+        //AddItem("Airstrike");
         AddItem("CatsEye");
+        invincibleTime = 0.7f;
     }
     private void Start()
     {
@@ -187,6 +230,7 @@ public class Player : MonoBehaviour
     }
     private void Update()
     {
+        magicCirlce.transform.Rotate(0, 0, Time.deltaTime * 100);
         HP += recover*Time.deltaTime;
         if(levelupCount>0)
         {
@@ -195,19 +239,26 @@ public class Player : MonoBehaviour
     }
     private void OnApplicationFocus(bool focus)
     {
-        if(!focus && !levelupMenu.gameObject.activeSelf)
+        if(!focus && !levelupMenu.gameObject.activeSelf && GameManager.Inst.stageManager.gamePlaying)
         {
             pauseMenu.gameObject.SetActive(true);
         }
     }
     public void Drag(InputAction.CallbackContext obj)
     {
-        transform.Translate(obj.ReadValue<Vector2>().x / 150.0f, 0, 0);
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -2.55f, 2.55f), transform.position.y, transform.position.z);
+        transform.Translate(obj.ReadValue<Vector2>().x / 150.0f, obj.ReadValue<Vector2>().y / 150.0f, 0);
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -2.55f, 2.55f), Mathf.Clamp(transform.position.y, -3.0f, 4.67f), transform.position.z);
     }
     public void AddItem(string type)
     {
         string[] weapon = { "CatsEye", "Rosruc", "MagicBall", "MagicArrow", "Airstrike"};
+        foreach(ItemData d in itemDatas)
+        {
+            if(d.id == type && !getItems.Contains(d))
+            {
+                getItems.Add(d);
+            }
+        }
         if (Array.IndexOf(weapon, type)>-1)
         {
             var item = GetComponentInChildren(Type.GetType($"{type}Spawner")) as BulletSpawner;
@@ -231,6 +282,9 @@ public class Player : MonoBehaviour
             }
             
             item.itemSlot.name = type;
+            item.enabled = true;
+            item.AddLv();
+
             switch (itemLevels[type])
             {
                 case 1:
@@ -249,9 +303,6 @@ public class Player : MonoBehaviour
                     item.itemSlot.GetComponentInChildren<TextMeshProUGUI>().text = "Ⅴ";
                     break;
             }
-
-            item.enabled = true;
-            item.AddLv();
         }
     }
     public void SetLevelItem(string type, int level)
@@ -266,5 +317,17 @@ public class Player : MonoBehaviour
             Item item = transform.Find("Items").GetComponent(Type.GetType(type)) as Item;
             item.SetLv(level);
         }
+    }
+    private IEnumerator Hit()
+    {
+        float t = invincibleTime;
+        GetComponent<SpriteRenderer>().color = Color.gray;
+        while(t>0)
+        {
+            t -= Time.deltaTime;
+            yield return null;
+        }
+        GetComponent<SpriteRenderer>().color = Color.white;
+        Invincible = false;
     }
 }

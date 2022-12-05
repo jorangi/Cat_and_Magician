@@ -4,12 +4,25 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    private bool spikeTimer;
+    protected bool SpikeTimer
+    {
+        get => spikeTimer;
+        set
+        {
+            if(value)
+            {
+                StartCoroutine(SpikeTimerOn());
+            }
+            spikeTimer = value;
+        }
+    }
     public EnemyData data;
     public float dmg;
     private Transform healthBar;
     public float maxhp;
-    private float hp;
-    private float spd;
+    protected float hp;
+    public float spd;
     public float HP
     {
         get => hp;
@@ -45,24 +58,25 @@ public class Enemy : MonoBehaviour
     {
         transform.Translate(spd * Time.fixedDeltaTime * Vector2.down);
     }
+    private IEnumerator SpikeTimerOn()
+    {
+        yield return new WaitForSeconds(GameManager.Inst.player.invincibleTime);
+        SpikeTimer = false;
+    }
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.CompareTag("Remove"))
         {
             Destroy(gameObject);
         }
-        else if(collision.CompareTag("Player"))
+        else if(collision.CompareTag("Player") && !GameManager.Inst.player.Invincible)
         {
-            gameObject.layer = 10;
-            HP -= GameManager.Inst.player.SpikeDmg;
-            if (collision.name == "ProtectBall")
+            if(!SpikeTimer)
             {
-                collision.gameObject.SetActive(false);
+                SpikeTimer = true;
+                HP -= GameManager.Inst.player.SpikeDmg;
             }
-            else
-            {
-                GameManager.Inst.player.HP -= dmg;
-            }
+            GameManager.Inst.player.HP -= dmg;
         }
     }
 }

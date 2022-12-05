@@ -18,7 +18,6 @@ public class Ribbon : Item
             if (lv > 0)
             {
                 GameManager.Inst.player.maxhp -= val[lv - 1];
-                GameManager.Inst.player.HP -= val[lv - 1];
             }
             lv = value;
             GameManager.Inst.player.itemLevels["Ribbon"] = value;
@@ -49,15 +48,6 @@ public class Ribbon : Item
     {
         if (GameManager.Inst == null)
             return;
-        if (val[Lv] >= GameManager.Inst.player.HP)
-        {
-            GameManager.Inst.player.maxhp -= val[Lv-1];
-            GameManager.Inst.player.HP = 1;
-        }
-        else
-        {
-            GameManager.Inst.player.maxhp -= val[Lv-1];
-            GameManager.Inst.player.HP -= val[Lv-1];
-        }
+        GameManager.Inst.player.maxhp -= val[Lv - 1];
     }
 }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MagicStone
   m_EditorClassIdentifier: 
   id: MagicStone
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 7c98dbb1a27ec144a99abd371ede96c9, type: 3}
   title: "\uB9C8\uBC95\uC11D"
   itemUp:
   - "\uACF5\uACA9\uC18D\uB3C4\uAC00 0.3\uC99D\uAC00\uD569\uB2C8\uB2E4"

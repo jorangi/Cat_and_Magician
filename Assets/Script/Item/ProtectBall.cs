@@ -43,6 +43,7 @@ public class ProtectBall : Item
             {
                 timer = val[Lv-1];
                 protectBall.SetActive(true);
+                GameManager.Inst.player.Protect = true;
             }
         }
     }

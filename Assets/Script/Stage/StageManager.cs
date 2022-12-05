@@ -1,9 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using GoogleMobileAds.Api;
 
 public class StageManager : MonoBehaviour
 {
+    private bool AppearedBoss = false;
+    public AudioSource bgm;
+    public Image backGround;
+    public bool gamePlaying = true;
+    private InterstitialAd interstitial;
     public Stage[] Allstages;
     public Stage stage;
     public float stageTime;
@@ -17,20 +24,26 @@ public class StageManager : MonoBehaviour
     private void Awake()
     {
         StageInit();
+        RequestInterstitial();
     }
     private void StageInit()
     {
+        bgm = GetComponent<AudioSource>();
+        backGround.sprite = stage.backGround;
+        bgm.clip = stage.bgm;
+        bgm.Play();
+        stageTime = stage.stageTime;
         waveTime = new();
         namedTime = new();
-        foreach(var w in stage.wave.Keys)
+        foreach (var w in stage.wave.Keys)
         {
             waveTime.Add(w);
         }
-        foreach(var w in stage.namedEnemies.Keys)
+        foreach (var w in stage.namedEnemies.Keys)
         {
             namedTime.Add(w);
         }
-        for(int i = 0; i<stage.NonWaveMulitply; i++)
+        for (int i = 0; i < stage.NonWaveMulitply; i++)
         {
             nonWaveTimes.Add(StartCoroutine(NonWaveTime()));
         }
@@ -70,13 +83,46 @@ public class StageManager : MonoBehaviour
             yield return new WaitForSeconds(Random.Range(0f, 1f));
         }
     }
+    private IEnumerator SpawnNamed()
+    {
+        Queue<string> wave = new();
+        List<string> tempWave = new();
+        foreach(KeyValuePair<string, int> mon in stage.namedEnemies[namedTime[0]].monsters)
+        {
+            for(int i = 0; i<mon.Value; i++)
+            {
+                tempWave.Add(mon.Key);
+            }
+        }
+        for(int i = 0; i<tempWave.Count; i++)
+        {
+            (tempWave[i], tempWave[Random.Range(0, tempWave.Count)]) = (tempWave[Random.Range(0, tempWave.Count)], tempWave[i]);
+        }
+        foreach (string monster in tempWave)
+        {
+            wave.Enqueue(monster);
+        }
+        while(wave.Count > 0)
+        {
+            GameManager.Inst.enemyManager.EnemySpawn(wave.Peek());
+            wave.Dequeue();
+            yield return new WaitForSeconds(Random.Range(0f, 1f));
+        }
+    }
     private void Update()
     {
+        if (!gamePlaying)
+            return;
         if(currentTime >= stageTime)
         {
             for (int i = 0; i < nonWaveTimes.Count; i++)
             {
                 StopCoroutine(nonWaveTimes[i]);
+            }
+            if(!AppearedBoss)
+            {
+                SpawnBoss();
+                AppearedBoss = true;
             }
         }
         else
@@ -90,6 +136,11 @@ public class StageManager : MonoBehaviour
                 StartCoroutine(SpawnWave());
                 waveTime.RemoveAt(0);
             }
+            if (namedTime.Count > 0 && namedTime[0] == (int)currentTime)
+            {
+                StartCoroutine(SpawnNamed());
+                namedTime.RemoveAt(0);
+            }
         }
         GameManager.Inst.player.Timer.text = string.Format("{0:D2}:{1:D2}", min, (int)sec);
         if((int)sec > 59)
@@ -97,5 +148,37 @@ public class StageManager : MonoBehaviour
             sec = 0;
             min++;
         }
+    }
+    public void SpawnBoss()
+    {
+        GameManager.Inst.enemyManager.EnemySpawn("teddywhale");
+        //StageClear();
+    }
+    public void StageClear()
+    {
+        gamePlaying = false;
+
+        if(!GameManager.Inst.AdBlocked)
+        {
+            if(interstitial.IsLoaded())
+            {
+                interstitial.Show();
+            }
+        }
+    }
+    private void RequestInterstitial()
+    {
+    #if UNITY_ANDROID
+        string adUnitId = "ca-app-pub-3940256099942544/1033173712";
+    #elif UNITY_IPHONE
+            string adUnitId = "ca-app-pub-3940256099942544/4411468910";
+    #else
+            string adUnitId = "unexpected_platform";
+    #endif
+
+        // Initialize an InterstitialAd.
+        this.interstitial = new InterstitialAd(adUnitId);
+        AdRequest request = new AdRequest.Builder().Build();
+        this.interstitial.LoadAd(request);
     }
 }

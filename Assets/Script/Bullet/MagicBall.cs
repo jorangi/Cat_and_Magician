@@ -21,8 +21,9 @@ public class MagicBall : Bullet
     {
         rigid.velocity = speed * transform.up;
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected override void OnTriggerEnter2D(Collider2D collision)
     {
+        base.OnTriggerEnter2D(collision);
         if (collision.CompareTag("Remove"))
         {
             ReturnObject();
@@ -31,8 +32,16 @@ public class MagicBall : Bullet
         {
             if(collision.CompareTag("Enemy"))
             {
-                collision.GetComponent<Enemy>().HP -= dmg;
-                if(bounce > 0)
+                if (collision.GetComponent<Enemy>() != null)
+                {
+                    collision.transform.Translate(Vector2.up * knockback);
+                    collision.GetComponent<Enemy>().HP -= dmg;
+                }
+                else if (collision.GetComponent<Boss>() != null)
+                {
+                    collision.GetComponent<Boss>().HP -= dmg;
+                }
+                if (bounce > 0)
                 {
                     transform.rotation = Quaternion.Euler(0, 0, Random.Range(0f, 361f));
                     bounce--;
@@ -71,8 +80,16 @@ public class MagicBall : Bullet
         {
             if (collision.CompareTag("Enemy") && colObj != collision.gameObject)
             {
-                collision.GetComponent<Enemy>().HP -= dmg;
-                if(bounce > 0)
+                if (collision.GetComponent<Enemy>() != null)
+                {
+                    collision.transform.Translate(Vector2.up * knockback);
+                    collision.GetComponent<Enemy>().HP -= dmg;
+                }
+                else if (collision.GetComponent<Boss>() != null)
+                {
+                    collision.GetComponent<Boss>().HP -= dmg;
+                }
+                if (bounce > 0)
                 {
                     transform.rotation = Quaternion.Euler(0, 0, Random.Range(0f, 361f));
                     bounce--;

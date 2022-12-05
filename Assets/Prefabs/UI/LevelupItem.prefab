@@ -494,22 +494,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3262827074262144409}
     m_Modifications:
-    - target: {fileID: 2390010733974682301, guid: 98de16934c482014e9c8b419121b744b, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 2390010733974682301, guid: 98de16934c482014e9c8b419121b744b, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 2672177765305775653, guid: 98de16934c482014e9c8b419121b744b, type: 3}
-      propertyPath: m_fontSize
-      value: 55.65
-      objectReference: {fileID: 0}
-    - target: {fileID: 2672177765305775653, guid: 98de16934c482014e9c8b419121b744b, type: 3}
-      propertyPath: m_enableAutoSizing
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3984381399900804488, guid: 98de16934c482014e9c8b419121b744b, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

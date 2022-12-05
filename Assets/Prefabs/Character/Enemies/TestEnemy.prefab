@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2476264236517181286}
   - component: {fileID: 2476264236517181287}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 2476264237971282748}
   - component: {fileID: 1802426043087968062}
   - component: {fileID: 2476264237971282749}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: TestEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -169,7 +169,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &2476264237971282748
@@ -234,3 +234,4 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 8b205932831acec43818cb43eae1308c, type: 2}
   dmg: 10
   maxhp: 0
+  spd: 0

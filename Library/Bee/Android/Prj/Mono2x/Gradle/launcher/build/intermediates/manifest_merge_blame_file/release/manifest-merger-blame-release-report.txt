@@ -139,6 +139,20 @@
 76-->[:unityLibrary] E:\Develop\Cat_and_Magician\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:66:13-40
 77            android:value="portrait|landscape" />
 77-->[:unityLibrary] E:\Develop\Cat_and_Magician\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:67:13-47
-78    </application>
-79
-80</manifest>
+78
+79        <uses-library
+79-->[:unityLibrary:GoogleMobileAdsPlugin.androidlib] E:\Develop\Cat_and_Magician\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\GoogleMobileAdsPlugin.androidlib\build\intermediates\library_manifest\release\AndroidManifest.xml:12:9-14:40
+80            android:name="org.apache.http.legacy"
+80-->[:unityLibrary:GoogleMobileAdsPlugin.androidlib] E:\Develop\Cat_and_Magician\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\GoogleMobileAdsPlugin.androidlib\build\intermediates\library_manifest\release\AndroidManifest.xml:13:13-50
+81            android:required="false" />
+81-->[:unityLibrary:GoogleMobileAdsPlugin.androidlib] E:\Develop\Cat_and_Magician\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\GoogleMobileAdsPlugin.androidlib\build\intermediates\library_manifest\release\AndroidManifest.xml:14:13-37
+82
+83        <meta-data
+83-->[:unityLibrary:GoogleMobileAdsPlugin.androidlib] E:\Develop\Cat_and_Magician\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\GoogleMobileAdsPlugin.androidlib\build\intermediates\library_manifest\release\AndroidManifest.xml:16:9-18:70
+84            android:name="com.google.android.gms.ads.APPLICATION_ID"
+84-->[:unityLibrary:GoogleMobileAdsPlugin.androidlib] E:\Develop\Cat_and_Magician\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\GoogleMobileAdsPlugin.androidlib\build\intermediates\library_manifest\release\AndroidManifest.xml:17:13-69
+85            android:value="ca-app-pub-3940256099942544/1033173712" />
+85-->[:unityLibrary:GoogleMobileAdsPlugin.androidlib] E:\Develop\Cat_and_Magician\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\GoogleMobileAdsPlugin.androidlib\build\intermediates\library_manifest\release\AndroidManifest.xml:18:13-67
+86    </application>
+87
+88</manifest>

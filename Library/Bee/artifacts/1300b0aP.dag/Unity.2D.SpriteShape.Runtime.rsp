@@ -113,6 +113,10 @@
 -define:ENABLE_SPRITESHAPE_BURST
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
+-r:"Assets/GoogleMobileAds/GoogleMobileAds.Android.dll"
+-r:"Assets/GoogleMobileAds/GoogleMobileAds.Common.dll"
+-r:"Assets/GoogleMobileAds/GoogleMobileAds.Core.dll"
+-r:"Assets/GoogleMobileAds/GoogleMobileAds.dll"
 -r:"E:/Develop/Cat_and_Magician/Library/PackageCache/com.unity.burst@1.7.3/Unity.Burst.CodeGen/Unity.Burst.Cecil.dll"
 -r:"E:/Develop/Cat_and_Magician/Library/PackageCache/com.unity.burst@1.7.3/Unity.Burst.CodeGen/Unity.Burst.Cecil.Mdb.dll"
 -r:"E:/Develop/Cat_and_Magician/Library/PackageCache/com.unity.burst@1.7.3/Unity.Burst.CodeGen/Unity.Burst.Cecil.Pdb.dll"

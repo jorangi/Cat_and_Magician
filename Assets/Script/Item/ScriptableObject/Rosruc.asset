@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Rosruc
   m_EditorClassIdentifier: 
   id: Rosruc
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 1c181c718d20ead46a437d0db0439718, type: 3}
   title: "\uB85C\uC2A4\uB7EC\uD06C"
   itemUp:
   - "\uAD00\uD1B5\uD558\uB294 \uD22C\uC0AC\uCCB4\uB97C \uBC1C\uC0AC\uD569\uB2C8\uB2E4"

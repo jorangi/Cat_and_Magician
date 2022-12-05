@@ -49,8 +49,11 @@ public class ConsoleManager : MonoBehaviour
         if (ConsoleUI.activeSelf)
         {
             input.text = "";
-            Time.timeScale = 1;
-            GameManager.Inst.player.input.Enable();
+            if(!GameManager.Inst.player.levelupMenu.gameObject.activeSelf)
+            {
+                Time.timeScale = 1;
+                GameManager.Inst.player.input.Enable();
+            }
         }
         else
         {
@@ -69,7 +72,7 @@ public class ConsoleManager : MonoBehaviour
     {
         string[] itemNamekor = { "캣츠아이", "로스러크", "매직볼", "매직애로우", "에어스트라이크", "리본", "매직햇", "돋보기", "마법석", "얼어붙은이름표", "가속포탈", "프로텍트볼", "액상사료", "밤송이", "푸른별조각" };
         string[] itemName = { "catseye", "rosruc", "magicball", "magicarrow", "airstrike", "ribbon", "magichat", "magnifyingglass", "magicstone", "frozennametag", "accelerateportal", "protectball", "churu", "spikyball", "fragmentbluestar" };
-        string[] itemNameOrigin = { "CatsEye", "Rosruc", "MagicBall", "MagicArrow", "AirStrike", "Ribbon", "MagicHat", "MagnifyingGlass", "MagicStone", "FfrozenNameTag", "AcceleratePortal", "ProtectBall", "Churu", "SpikyBall", "FragmentBlueStar" };
+        string[] itemNameOrigin = { "CatsEye", "Rosruc", "MagicBall", "MagicArrow", "Airstrike", "Ribbon", "MagicHat", "MagnifyingGlass", "MagicStone", "FfrozenNameTag", "AcceleratePortal", "ProtectBall", "Churu", "SpikyBall", "FragmentBlueStar" };
         string[] mobNamekor = { "노란별", "푸른별", "초록별", "붉은별", "하얀별" };
         string[] mobName = { "yellowexpstar", "blueexpstar", "greenexpstar", "redexpstar", "whiteexpstar" };
         string[] mobNameOrigin = { "YellowExpStar", "BlueExpStar", "GreenExpStar", "RedExpStar", "WhiteExpStar" };
@@ -242,8 +245,8 @@ public class ConsoleManager : MonoBehaviour
             }
             return;
         }
-        string[] weaponName = { "CatsEye", "Rosruc", "MagicBall", "MagicArrow", "AirStrike"};
-        string[] itemNameOrigin = { "CatsEye", "Rosruc", "MagicBall", "MagicArrow", "AirStrike", "Ribbon", "MagicHat", "MagnifyingGlass", "MagicStone", "FfrozenNameTag", "AcceleratePortal", "ProtectBall", "Churu", "SpikyBall", "FragmentBlueStar" };
+        string[] weaponName = { "CatsEye", "Rosruc", "MagicBall", "MagicArrow", "Airstrike"};
+        string[] itemNameOrigin = { "CatsEye", "Rosruc", "MagicBall", "MagicArrow", "Airstrike", "Ribbon", "MagicHat", "MagnifyingGlass", "MagicStone", "FfrozenNameTag", "AcceleratePortal", "ProtectBall", "Churu", "SpikyBall", "FragmentBlueStar" };
         string[] mobName = { "yellowexpstar", "blueexpstar", "greenexpstar", "redexpstar", "whiteexpstar" };
         string[] monsterName = { "testenemy" };
 

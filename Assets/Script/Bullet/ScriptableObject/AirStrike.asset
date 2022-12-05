@@ -10,22 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b62f27502d6971744858cfbbefef87f0, type: 3}
-  m_Name: AirStrike
+  m_Name: Airstrike
   m_EditorClassIdentifier: 
-  bullet: {fileID: 0}
+  bullet: {fileID: 5402342191471466016, guid: f90b02b0039486141b66d041c8453166, type: 3}
   delay:
-  - 0.08
-  - 0.09
-  - 0.1
-  - 0.12
-  - 0.15
+  - 0.5
+  - 0.9
+  - 1.3
+  - 1.7
+  - 2
   speed:
-  - 0
+  - 15
   dmg:
+  - 15
+  - 15
   - 30
   - 30
   - 50
-  - 50
-  - 80
   knockback: 0
   limit: 50

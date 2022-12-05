@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MagicArrow
   m_EditorClassIdentifier: 
   id: MagicArrow
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: d7db233925a008b4dbbb8d7b8ba1707a, type: 3}
   title: "\uB9E4\uC9C1\uC560\uB85C\uC6B0"
   itemUp:
   - "\uC804\uBC29\uC5D0 \uD654\uC0B4\uC744 \uBC1C\uC0AC\uD569\uB2C8\uB2E4, \uB9E4\uC9C1\uC560\uB85C\uC6B0\uC758

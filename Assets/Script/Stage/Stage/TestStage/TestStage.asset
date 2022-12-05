@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4e6c58806c0f8747aba441d74494ce0, type: 3}
   m_Name: TestStage
   m_EditorClassIdentifier: 
+  stageTime: 600
   NonWaveMulitply: 3
   NonWaveDelayMin: 4
   NonWaveDelayMax: 7
   stageId: teststage
   stageName: "\uD14C\uC2A4\uD2B8\uC2A4\uD14C\uC774\uC9C0"
-  backGround: {fileID: 0}
+  backGround: {fileID: 21300000, guid: 23e22c30b56209841a7491866b2c46fd, type: 3}
   appearEnemies:
   - testenemy
   namedEnemies:

@@ -7,8 +7,6 @@ using TMPro;
 
 public class LevelupMenu : MonoBehaviour
 {
-    private int min = 4;
-    private int max = 5;
     public GameObject levelupItemPrefab;
     public Transform list;
 
@@ -19,12 +17,23 @@ public class LevelupMenu : MonoBehaviour
         Time.timeScale = 0.0f;
         GameManager.Inst.player.input.Disable();
 
-        List<ItemData> items = GameManager.Inst.player.itemDatas.ToList();
-        for(int i = items.Count-1; i>0; i--)
+        List<ItemData> items = new();
+        if(GameManager.Inst.player.getItems.Count < 12)
+        {
+            items = GameManager.Inst.player.itemDatas.ToList();
+        }
+        else
+        {
+            foreach(ItemData data in GameManager.Inst.player.getItems)
+            {
+                items.Add(data);
+            }
+        }
+        for(int i = items.Count-1; i>=0; i--)
         {
             if (GameManager.Inst.player.itemLevels[items[i].id] == items[i].itemUp.Length)
             {
-                items.RemoveAt(i);
+                items.Remove(items[i]);
             }
         }
         if(items.Count == 0)
@@ -39,11 +48,17 @@ public class LevelupMenu : MonoBehaviour
         }
         else
         {
-            for(int i = 0; i < Random.Range(min, max); i++)
+            List<ItemData> t = new();
+            foreach(ItemData temp in items)
+            {
+                t.Add(temp);
+            }
+
+            for(int i = 0; i < Mathf.Min(items.Count, 4); i++)
             {
                 GameObject obj = Instantiate(levelupItemPrefab, list);
-                int index = Random.Range(0, items.Count);
-                ItemData data = items[index];
+                int index = Random.Range(0, t.Count);
+                ItemData data = t[index];
                 LevelupItem tempData = obj.GetComponent<LevelupItem>();
                 tempData.iconImage.sprite = data.icon;
                 switch(GameManager.Inst.player.itemLevels[data.id])
@@ -68,7 +83,7 @@ public class LevelupMenu : MonoBehaviour
                 tempData.descText.text = data.itemUp[GameManager.Inst.player.itemLevels[data.id]];
                 tempData.GetComponent<Button>().onClick.AddListener(() => { GameManager.Inst.player.AddItem(data.id); gameObject.SetActive(false); });
 
-                items.RemoveAt(index);
+                t.Remove(t[index]);
             }
         }
     }

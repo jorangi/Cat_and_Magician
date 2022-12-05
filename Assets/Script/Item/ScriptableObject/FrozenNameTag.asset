@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FrozenNameTag
   m_EditorClassIdentifier: 
   id: FrozenNameTag
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: e39f8afa62a135f4697b313d8de1b276, type: 3}
   title: "\uC5BC\uC5B4\uBD99\uC740 \uC774\uB984\uD45C"
   itemUp:
   - "\uD22C\uC0AC\uCCB4\uC758 \uC18D\uB3C4\uAC00 0.7\uAC10\uC18C\uD569\uB2C8\uB2E4"

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Churu
   m_EditorClassIdentifier: 
   id: Churu
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 33eeae41575db9e46b8376be6b5da7fa, type: 3}
   title: "\uC561\uC0C1\uC0AC\uB8CC"
   itemUp:
   - "\uCD08\uB2F9 \uCCB4\uB825 \uC7AC\uC0DD\uB7C9\uC774 0.1\uC99D\uAC00\uD569\uB2C8\uB2E4"

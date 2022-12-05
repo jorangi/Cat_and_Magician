@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public bool AdBlocked = false;
     private static GameManager inst = null;
     public EnemyManager enemyManager;
     public ConsoleManager consoleManager;

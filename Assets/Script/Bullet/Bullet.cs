@@ -15,6 +15,9 @@ public class Bullet : MonoBehaviour
     {
         transform.Translate(speed * Time.deltaTime * Vector2.up);
     }
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
+    {
+    }
     public void ReturnObject()
     {
         transform.SetParent(GameObject.FindGameObjectWithTag("Bullets").transform.Find(name));

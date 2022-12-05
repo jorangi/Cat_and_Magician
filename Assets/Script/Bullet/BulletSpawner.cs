@@ -117,7 +117,7 @@ public class BulletSpawner : MonoBehaviour
     {
 
     }
-    private void PoolingBullet()
+    protected virtual void PoolingBullet()
     {
         GameObject parent = new();
         parent.transform.SetParent(Bullets.transform);
@@ -126,6 +126,7 @@ public class BulletSpawner : MonoBehaviour
         for(int i = 0; i<bulletData.limit; i++)
         {
             GameObject obj = Instantiate(bulletData.bullet, parent.transform);
+            obj.name = Bullets.name;
             obj.SetActive(false);
         }
     }
@@ -146,7 +147,7 @@ public class BulletSpawner : MonoBehaviour
         obj.transform.SetParent(null);
         Bullet bullet = obj.GetComponent<Bullet>();
         bullet.dmg = dmg + GameManager.Inst.player.BulletDmg;
-        bullet.speed = speed + GameManager.Inst.player.BulletSpeed;
+        bullet.speed = Mathf.Max(0.1f, speed + GameManager.Inst.player.BulletSpeed);
         bullet.knockback = bulletData.knockback + GameManager.Inst.player.Knockback;
         obj.transform.localScale = new(GameManager.Inst.player.BulletSize, GameManager.Inst.player.BulletSize);
         obj.name = bulletData.name;

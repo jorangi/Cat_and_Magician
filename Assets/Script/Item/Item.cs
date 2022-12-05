@@ -28,13 +28,6 @@ public class Item : MonoBehaviour
             transform.position = Vector2.Lerp(transform.position, GameManager.Inst.player.transform.position, spd * 5f * Time.fixedDeltaTime);
         }
     }
-    protected void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.collider.CompareTag("Remove"))
-        {
-            Destroy(gameObject);
-        }
-    }
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.CompareTag("Player"))
@@ -45,6 +38,10 @@ public class Item : MonoBehaviour
         if(collision.CompareTag("Magnet"))
         {
             Magnet = true;
+        }
+        if (collision.CompareTag("Remove"))
+        {
+            Destroy(gameObject);
         }
     }
 }

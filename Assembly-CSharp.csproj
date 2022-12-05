@@ -57,22 +57,29 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Script\Item\MagnifyingGlass.cs" />
+    <Compile Include="Assets\Stage\DollForest\Script\TeddyWhale.cs" />
     <Compile Include="Assets\Script\Item\MagicStone.cs" />
     <Compile Include="Assets\Script\Bullet\MagicBall.cs" />
     <Compile Include="Assets\Script\Bullet\Rosruc.cs" />
     <Compile Include="Assets\Script\Item\ProtectBall.cs" />
     <Compile Include="Assets\Script\Manager\ConsoleManager.cs" />
+    <Compile Include="Assets\Script\Item\LevelupItem.cs" />
     <Compile Include="Assets\Script\SerializableDictionary\SerializableDictionary.cs" />
     <Compile Include="Assets\Script\Item\ExpStars\WhiteExpStar.cs" />
     <Compile Include="Assets\Script\Item\AcceleratePortal.cs" />
+    <Compile Include="Assets\Script\Bullet\MagicArrowSpawner.cs" />
     <Compile Include="Assets\Script\Item\MagicHat.cs" />
     <Compile Include="Assets\Script\Item\ExpStars\GreenExpStar.cs" />
+    <Compile Include="Assets\Script\LevelupMenu.cs" />
     <Compile Include="Assets\Script\SerializableDictionary\CustomDictionary.cs" />
     <Compile Include="Assets\Script\Item\FrozenNameTag.cs" />
     <Compile Include="Assets\Script\Item\Churu.cs" />
+    <Compile Include="Assets\Script\Bullet\MagicArrow.cs" />
+    <Compile Include="Assets\Script\Enemy\EnemyData.cs" />
     <Compile Include="Assets\Script\Bullet\BulletSpawner.cs" />
-    <Compile Include="Assets\Vertical 2D Shooting BE4\ReadMe\Scripts\ReadmeBE4.cs" />
+    <Compile Include="Assets\Script\Item\ItemData.cs" />
     <Compile Include="Assets\Script\Item\Ribbon.cs" />
+    <Compile Include="Assets\Script\Stage\StageManager.cs" />
     <Compile Include="Assets\Script\Item\ExpStars\BlueExpStar.cs" />
     <Compile Include="Assets\Script\Bullet\Bullet.cs" />
     <Compile Include="Assets\Script\Item\SpikyBall.cs" />
@@ -81,33 +88,41 @@
     <Compile Include="Assets\Script\Item\FragmentBlueStar.cs" />
     <Compile Include="Assets\Script\Player.cs" />
     <Compile Include="Assets\Script\Bullet\CatsEyeSpawner.cs" />
+    <Compile Include="Assets\Script\Stage\Stage.cs" />
     <Compile Include="Assets\Script\Enemy\Enemy.cs" />
     <Compile Include="Assets\Input\PlayerInputs.cs" />
     <Compile Include="Assets\Script\Bullet\MagicBallSpawner.cs" />
     <Compile Include="Assets\Script\Bullet\CatsEye.cs" />
+    <Compile Include="Assets\Script\Bullet\Airstrike.cs" />
     <Compile Include="Assets\Script\Manager\EnemyManager.cs" />
     <Compile Include="Assets\Script\Item\ExpStars\RedExpStar.cs" />
     <Compile Include="Assets\Script\PauseMenu.cs" />
     <Compile Include="Assets\Script\CameraResolution.cs" />
     <Compile Include="Assets\Script\Bullet\RosrucSpawner.cs" />
+    <Compile Include="Assets\Script\Bullet\AirstrikeRange.cs" />
+    <Compile Include="Assets\Script\Bullet\AirstrikeSpawner.cs" />
     <Compile Include="Assets\Script\Manager\GameManager.cs" />
-    <Compile Include="Assets\Script\Item\ProtectBallObject.cs" />
-    <Compile Include="Assets\Script\Item\ExpStars\YellowExpStar.cs" />
-    <Compile Include="Assets\Script\Item\LevelupItem.cs" />
-    <Compile Include="Assets\Script\Item\ItemData.cs" />
-    <Compile Include="Assets\Script\LevelupMenu.cs" />
-    <Compile Include="Assets\Script\Enemy\EnemyData.cs" />
-    <Compile Include="Assets\Script\Stage\StageManager.cs" />
-    <Compile Include="Assets\Script\Stage\Stage.cs" />
     <Compile Include="Assets\Script\Stage\Wave.cs" />
+    <Compile Include="Assets\Script\Item\ExpStars\YellowExpStar.cs" />
+    <Compile Include="Assets\Stage\DollForest\Script\TeddyLion.cs" />
+    <Compile Include="Assets\Stage\DollForest\Script\TeddyBear.cs" />
+    <Compile Include="Assets\Stage\DollForest\Script\LionLaser.cs" />
+    <Compile Include="Assets\Stage\DollForest\Script\BottleCap.cs" />
+    <Compile Include="Assets\Script\Enemy\Boss.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\GoogleMobileAds\GoogleMobileAds.Common.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
+    <None Include="Assets\GoogleMobileAds\GoogleMobileAds.dll" />
+    <None Include="Assets\GoogleMobileAds\GoogleMobileAds.iOS.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\GoogleMobileAds\GoogleMobileAds.Core.dll" />
+    <None Include="Assets\GoogleMobileAds\link.xml" />
+    <None Include="Assets\GoogleMobileAds\GoogleMobileAds_version-7.3.1_manifest.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
@@ -117,12 +132,15 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\GoogleMobileAds\GoogleMobileAds.Unity.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\GoogleMobileAds\GoogleMobileAds.Android.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
+    <None Include="Assets\Sounds\BGM\Copyrights.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -362,11 +380,20 @@
     <Reference Include="UnityEditor.UnityConnectModule">
       <HintPath>E:\Programs\Unity\Hub\Editor\2021.3.13f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
     </Reference>
+    <Reference Include="GoogleMobileAds.Core">
+      <HintPath>Assets\GoogleMobileAds\GoogleMobileAds.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="GoogleMobileAds">
+      <HintPath>Assets\GoogleMobileAds\GoogleMobileAds.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Burst.Unsafe">
       <HintPath>Library\PackageCache\com.unity.burst@1.7.3\Unity.Burst.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst.Cecil.Mdb">
       <HintPath>Library\PackageCache\com.unity.burst@1.7.3\Unity.Burst.CodeGen\Unity.Burst.Cecil.Mdb.dll</HintPath>
+    </Reference>
+    <Reference Include="GoogleMobileAds.Unity">
+      <HintPath>Assets\GoogleMobileAds\GoogleMobileAds.Unity.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst.Cecil.Pdb">
       <HintPath>Library\PackageCache\com.unity.burst@1.7.3\Unity.Burst.CodeGen\Unity.Burst.Cecil.Pdb.dll</HintPath>
@@ -374,14 +401,23 @@
     <Reference Include="Unity.Burst.Cecil">
       <HintPath>Library\PackageCache\com.unity.burst@1.7.3\Unity.Burst.CodeGen\Unity.Burst.Cecil.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Burst.Cecil.Rocks">
-      <HintPath>Library\PackageCache\com.unity.burst@1.7.3\Unity.Burst.CodeGen\Unity.Burst.Cecil.Rocks.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Burst.Cecil.Rocks">
+      <HintPath>Library\PackageCache\com.unity.burst@1.7.3\Unity.Burst.CodeGen\Unity.Burst.Cecil.Rocks.dll</HintPath>
+    </Reference>
+    <Reference Include="GoogleMobileAds.Common">
+      <HintPath>Assets\GoogleMobileAds\GoogleMobileAds.Common.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>E:\Programs\Unity\Hub\Editor\2021.3.13f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Common">
+      <HintPath>E:\Programs\Unity\Hub\Editor\2021.3.13f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Common.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Android.Types">
       <HintPath>E:\Programs\Unity\Hub\Editor\2021.3.13f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
@@ -925,6 +961,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="GoogleMobileAds.Editor.csproj">
+      <Project>{07B71887-D92B-14AC-BE87-F293621AD534}</Project>
+      <Name>GoogleMobileAds.Editor</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

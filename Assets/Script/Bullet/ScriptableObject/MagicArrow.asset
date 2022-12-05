@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b62f27502d6971744858cfbbefef87f0, type: 3}
   m_Name: MagicArrow
   m_EditorClassIdentifier: 
-  bullet: {fileID: 0}
+  bullet: {fileID: 5402342191471466016, guid: 7af1a7e84d4b0764988a79bca60e5c62, type: 3}
   delay:
   - 2.7
   speed:

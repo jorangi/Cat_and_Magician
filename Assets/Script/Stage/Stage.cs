@@ -5,6 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Stage", menuName = "Scriptable Object/Stage", order = int.MaxValue)]
 public class Stage : ScriptableObject
 {
+    public AudioClip bgm;
+    public float stageTime;
     public int NonWaveMulitply;
     public float NonWaveDelayMin;
     public float NonWaveDelayMax;
@@ -14,4 +16,5 @@ public class Stage : ScriptableObject
     public string[] appearEnemies;
     public IntWaveDictionary namedEnemies = new();
     public IntWaveDictionary wave = new();
+    public string bossEnemy;
 }

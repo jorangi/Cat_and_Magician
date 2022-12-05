@@ -8,7 +8,7 @@ public class EnemyManager : MonoBehaviour
     public void EnemySpawn(string enemyName)
     {
         GameObject enemy = Instantiate(Enemies[enemyName]);
-        enemy.transform.position = new(Random.Range(-2.55f, 3.55f), 5.5f, 0);
+        enemy.transform.position = new(Random.Range(-2.55f, 2.55f), 5.5f, 0);
         enemy.name = enemyName;
     }
     public void KillEnemies(string enemyName)

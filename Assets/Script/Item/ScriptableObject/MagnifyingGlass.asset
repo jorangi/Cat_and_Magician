@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MagnifyingGlass
   m_EditorClassIdentifier: 
   id: MagnifyingGlass
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: c054bc6db436dc347a3f4c50b5042a4d, type: 3}
   title: "\uB3CB\uBCF4\uAE30"
   itemUp:
   - "\uD22C\uC0AC\uCCB4\uC758 \uD06C\uAE30\uAC00 15%\uC99D\uAC00\uD569\uB2C8\uB2E4"
